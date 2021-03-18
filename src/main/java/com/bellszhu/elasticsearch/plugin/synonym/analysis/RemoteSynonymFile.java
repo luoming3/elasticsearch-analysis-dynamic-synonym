@@ -216,6 +216,8 @@ public class RemoteSynonymFile implements SynonymFile {
                 logger.info("remote synonym {} return bad code {}", location,
                         response.getStatusLine().getStatusCode());
             }
+        } catch (Exception e) {
+            logger.error("unknown exception", e);
         } finally {
             try {
                 if (response != null) {
